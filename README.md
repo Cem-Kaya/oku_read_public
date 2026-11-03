@@ -7,6 +7,10 @@ positions. Reading text remains available when replacement text is hidden.
 [Download the Windows installer](https://github.com/Cem-Kaya/oku_read_public/releases)
 or [report a problem](https://github.com/Cem-Kaya/oku_read_public/issues).
 
+The WinGet package is submitted as **CemKaya.OkuRead**. Follow the
+[community submission](https://github.com/microsoft/winget-pkgs/pull/470112)
+for its review and availability in the WinGet catalog.
+
 ## Install
 
 The MSI installs for the current user. Setup downloads verified PP-OCRv6 Medium
