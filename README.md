@@ -4,8 +4,8 @@ OkuRead makes text in screen images available to screen readers. It creates a
 whole-screen OCR snapshot and can display replacement text at its source
 positions. Reading text remains available when replacement text is hidden.
 
-[Download the Windows installer](https://github.com/Cem-Kaya/OkuRead-releases/releases)
-or [report a problem](https://github.com/Cem-Kaya/OkuRead-releases/issues).
+[Download the Windows installer](https://github.com/Cem-Kaya/oku_read_public/releases)
+or [report a problem](https://github.com/Cem-Kaya/oku_read_public/issues).
 
 ## Install
 
