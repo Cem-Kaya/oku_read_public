@@ -14,8 +14,9 @@ for its review and availability in the WinGet catalog.
 ## Install
 
 The MSI installs for the current user. Setup downloads verified PP-OCRv6 Medium
-models and prepares TensorRT engines for the computer's NVIDIA GPU. Internet
-access is required during setup; models are not bundled in the MSI.
+models without requiring a GPU. The first requested read prepares TensorRT
+engines locally and offline for the computer's NVIDIA GPU. Internet access is
+required during setup; models are not bundled in the MSI.
 
 OkuRead is currently unsigned. Verify the installer against the SHA256SUMS
 published with its release. Included NVIDIA and other third-party components
@@ -28,12 +29,13 @@ retain their own license terms, which are included in the installation.
   Displays driven by an Intel or AMD integrated GPU are not yet supported.
 - Device preparation covers the RTX 2060, RTX 3050 family, RTX 4090 and RTX 5070 Ti
   architectures. Actual hardware qualification has so far been on an RTX 4090;
-  this does not establish successful installation or performance on the other GPUs.
+  this does not establish successful OCR use or performance on the other GPUs.
 
 ## Use
 
 - **Ctrl+Alt+G:** open a new snapshot, or close the current overlay.
-- **Refresh:** replace the current snapshot.
+- **Refresh:** take a whole-screen snapshot without selecting an app. With Auto
+  off this runs once; with Auto on the configured timer continues.
 - **Pause / Resume:** remove or restore the snapshot's visual and accessible text.
 - **Read:** open the snapshot as a reading document.
 - **Auto:** refresh automatically; off by default.

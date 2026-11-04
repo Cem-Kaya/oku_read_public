@@ -7,8 +7,9 @@ available through Windows accessibility and optional visual replacement.
 - The application runtime has no network download, telemetry or upload path.
 - Captured images, recognized text and product logs are not saved by default.
 - Setup uses the network to download pinned OCR models. It checks their sizes
-  and SHA-256 hashes and prepares device-specific engines locally. Setup does
-  not capture the screen or start OCR.
+  and SHA-256 hashes. Missing device-specific engines are prepared locally and
+  offline on the first requested read. Setup does not capture the screen or
+  start OCR. Optional setup-time GPU preparation is available to advanced users.
 - Optional screenshot testing is an explicit diagnostic mode. It makes OkuRead's
   own windows capturable and indicates that state visibly. It saves nothing
   itself. Capture exclusion is re-established before a new OCR request.
