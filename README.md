@@ -18,6 +18,11 @@ models without requiring a GPU. The first requested read prepares TensorRT
 engines locally and offline for the computer's NVIDIA GPU. Internet access is
 required during setup; models are not bundled in the MSI.
 
+When a requested read needs to prepare engines, a compact **Getting ready**
+window shows component progress. Cancel or Escape stops the request; completed
+engine files remain reusable. Cached reads skip this window. Preparation stays
+offline.
+
 OkuRead is currently unsigned. Verify the installer against the SHA256SUMS
 published with its release. Included NVIDIA and other third-party components
 retain their own license terms, which are included in the installation.
