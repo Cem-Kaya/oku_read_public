@@ -1,5 +1,7 @@
 # OkuRead
 
+<img src="assets/okuread.png" width="96" height="96" alt="OkuRead: a picture, speaker, sparkle and magenta magnifier">
+
 OkuRead makes text in screen images available to screen readers. It creates a
 whole-screen OCR snapshot and can display replacement text at its source
 positions. Reading text remains available when replacement text is hidden.
@@ -18,8 +20,9 @@ models without requiring a GPU. The first requested read prepares TensorRT
 engines locally and offline for the computer's NVIDIA GPU. Internet access is
 required during setup; models are not bundled in the MSI.
 
-When a requested read needs to prepare engines, a compact **Getting ready**
-window shows component progress. Cancel or Escape stops the request; completed
+When a requested read needs to prepare engines, a compact **One-time setup for
+this GPU** window shows component progress and explains that preparation may
+take a couple of minutes. Cancel or Escape stops the request; completed
 engine files remain reusable. Cached reads skip this window. Preparation stays
 offline.
 
@@ -43,9 +46,24 @@ retain their own license terms, which are included in the installation.
   off this runs once; with Auto on the configured timer continues.
 - **Pause / Resume:** remove or restore the snapshot's visual and accessible text.
 - **Read:** open the snapshot as a reading document.
-- **Auto:** refresh automatically; off by default.
+- **Auto:** refresh automatically; off by default. Settings includes As fast as
+  possible, 2 FPS, 5 FPS and 15 FPS targets alongside the longer intervals. Reads
+  run one at a time; actual speed depends on the GPU and screen content.
 - **Settings → Start with Windows:** opt in to starting in the tray. Models stay
   unloaded until the first explicit read.
+
+The installer creates desktop and Start menu shortcuts. The app, notification
+area, taskbar, executables and installer use the same OkuRead icon.
+
+| Action | Shortcut |
+| --- | --- |
+| Refresh | Ctrl+Alt+Shift+R |
+| Pause / Resume | Ctrl+Alt+Shift+P |
+| Auto on / off | Ctrl+Alt+Shift+A |
+| Click through on / off | Ctrl+Alt+Shift+C |
+| Show text on / off | Ctrl+Alt+Shift+T |
+| Settings | Ctrl+Alt+Shift+S |
+| Show controls | Ctrl+Alt+O |
 
 Closing the overlay keeps OkuRead in the tray. Quit exits the application.
 For a reading check, keep one snapshot unchanged for at least 60 seconds.
