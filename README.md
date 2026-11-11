@@ -45,12 +45,23 @@ retain their own license terms, which are included in the installation.
 - **Refresh:** take a whole-screen snapshot without selecting an app. With Auto
   off this runs once; with Auto on the configured timer continues.
 - **Pause / Resume:** remove or restore the snapshot's visual and accessible text.
-- **Read:** open the snapshot as a reading document.
+- **Settings → Advanced → Read document:** open the snapshot as a reading
+  document, or use Ctrl+Alt+T.
 - **Auto:** refresh automatically; off by default. Settings includes As fast as
   possible, 2 FPS, 5 FPS and 15 FPS targets alongside the longer intervals. Reads
   run one at a time; actual speed depends on the GPU and screen content.
 - **Settings → Start with Windows:** opt in to starting in the tray. Models stay
   unloaded until the first explicit read.
+- **Minimize controls:** hide only the strip. Replacement text and Auto remain
+  active; Ctrl+Alt+O restores the controls.
+
+The controls follow Windows virtual desktops. Switching clears the previous
+desktop's positioned text and cancels its pending read. Auto On reads the new
+desktop; Auto Off waits for Refresh. Paused and minimized states are preserved.
+
+Automatic reads retain unchanged replacement text and reading targets to reduce
+flicker. Text recognition, visual placement and accessibility grouping remain
+separate so text can be read even when it cannot be drawn precisely.
 
 The installer creates desktop and Start menu shortcuts. The app, notification
 area, taskbar, executables and installer use the same OkuRead icon.
@@ -74,6 +85,10 @@ Screen capture and OCR processing stay on the computer. The application runtime
 makes no network requests and does not save captured images, recognized text or
 product logs by default. Setup alone downloads model files. See the
 [privacy details](PRIVACY.md).
+
+Recognition reads visible screen pixels without querying password fields or
+masking applications whose accessibility providers do not respond. OkuRead's
+own windows are excluded from capture before each read to avoid OCR feedback.
 
 This is the official binary distribution repository. Application source is
 maintained separately.

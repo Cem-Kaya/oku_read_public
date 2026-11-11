@@ -6,6 +6,9 @@ available through Windows accessibility and optional visual replacement.
 - Captured screen images and recognized text stay on the computer.
 - The application runtime has no network download, telemetry or upload path.
 - Captured images, recognized text and product logs are not saved by default.
+- OCR reads visible screen pixels without querying password fields or applying
+  password-field or unresponsive-application masks. Characters concealed by an
+  application's own password dots remain concealed in the captured pixels.
 - Setup uses the network to download pinned OCR models. It checks their sizes
   and SHA-256 hashes. Missing device-specific engines are prepared locally and
   offline on the first requested read. Setup does not capture the screen or
