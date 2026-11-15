@@ -16,9 +16,23 @@ for its review and availability in the WinGet catalog.
 ## Install
 
 The MSI installs for the current user. Setup downloads verified PP-OCRv6 Medium
-models without requiring a GPU. The first requested read prepares TensorRT
-engines locally and offline for the computer's NVIDIA GPU. Internet access is
-required during setup; models are not bundled in the MSI.
+models and, by default, optional Tiny and Small models without requiring a GPU.
+The first requested read prepares TensorRT engines locally and offline for the
+computer's NVIDIA GPU. Internet access is required during setup; models are not
+bundled in the MSI. If an optional model cannot be downloaded, setup still
+completes and OkuRead uses Medium.
+
+Setup closes a running OkuRead from its own installation folder before updating,
+repairing or removing it. After a successful interactive setup, the checked
+**Start OkuRead** box on Finish starts OkuRead in the notification area without
+starting a read.
+
+| Setup property | Effect |
+| --- | --- |
+| `OKUREAD_EXTRA_MODELS=0` | Skip the optional models and save Extra models Off |
+| `OKUREAD_EXTRA_MODELS=1` | Download the optional models and save Extra models On |
+| `OKUREAD_LAUNCH=1` / `0` | Request / prevent starting OkuRead after successful setup |
+| `OKUREAD_PREPARE_GPU=1` | Prepare GPU engines during setup instead of on the first read |
 
 When a requested read needs to prepare engines, a compact **One-time setup for
 this GPU** window shows component progress and explains that preparation may
@@ -52,6 +66,9 @@ retain their own license terms, which are included in the installation.
   run one at a time; actual speed depends on the GPU and screen content.
 - **Settings → Start with Windows:** opt in to starting in the tray. Models stay
   unloaded until the first explicit read.
+- **Settings → Use extra models for faster reading:** on by default. Uses the
+  smaller Tiny/Small models alongside Medium and more GPU memory; off uses the
+  Medium-only path. Reading can differ slightly between the two.
 - **Minimize controls:** hide only the strip. Replacement text and Auto remain
   active; Ctrl+Alt+O restores the controls.
 
@@ -89,6 +106,9 @@ product logs by default. Setup alone downloads model files. See the
 Recognition reads visible screen pixels without querying password fields or
 masking applications whose accessibility providers do not respond. OkuRead's
 own windows are excluded from capture before each read to avoid OCR feedback.
+OkuRead waits for Windows to compose the screen before a read only on its first
+read and when one of its own menus, Settings or reading document may have been
+visible without that exclusion.
 
 This is the official binary distribution repository. Application source is
 maintained separately.
